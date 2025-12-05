@@ -1,0 +1,85 @@
+{
+  "name": "devmate-vscode",
+  "displayName": "DevMate - AI Coding Assistant",
+  "description": "AI-powered code analysis, refactoring, and suggestions",
+  "version": "1.0.0",
+  "publisher": "devmate",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Machine Learning",
+    "Other"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "devmate.analyze",
+        "title": "DevMate: Analyze Code"
+      },
+      {
+        "command": "devmate.refactor",
+        "title": "DevMate: Refactor Code"
+      },
+      {
+        "command": "devmate.suggest",
+        "title": "DevMate: Get Suggestions"
+      },
+      {
+        "command": "devmate.openDashboard",
+        "title": "DevMate: Open Dashboard"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "devmate.analyze",
+          "group": "devmate",
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "devmate.refactor",
+          "group": "devmate",
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "devmate.suggest",
+          "group": "devmate"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "DevMate",
+      "properties": {
+        "devmate.apiUrl": {
+          "type": "string",
+          "default": "http://localhost:3000",
+          "description": "DevMate API URL"
+        },
+        "devmate.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "Groq API Key"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@monaco-editor/react": "^4.7.0",
+    "axios": "^1.13.2",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.555.0"
+  }
+}

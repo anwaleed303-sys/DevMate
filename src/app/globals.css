@@ -1,0 +1,19 @@
+html,
+body,
+#__next {
+  background: radial-gradient(
+      ellipse at top,
+      rgba(99, 102, 241, 0.15) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at bottom,
+      rgba(139, 92, 246, 0.15) 0%,
+      transparent 50%
+    ),
+    #0a0e1a !important; /* Correct placement of !important */
+  color: rgba(255, 255, 255, 0.95);
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
