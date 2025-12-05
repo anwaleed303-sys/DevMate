@@ -1,5 +1,5 @@
 import * as vscode from "vscode";
-import { analyzeCode } from "./commands/analyze";
+// import { analyzeCode } from "./commands/analyze";
 import { refactorCode } from "./commands/refactor";
 import { getSuggestions, registerAutoSuggest } from "./commands/suggest";
 import { DevMatePanel } from "./webview/DevMatePanel";
@@ -13,9 +13,9 @@ export function activate(context: vscode.ExtensionContext) {
 
   // Register commands
   context.subscriptions.push(
-    vscode.commands.registerCommand("devmate.analyze", () =>
-      analyzeCode(context)
-    ),
+    // vscode.commands.registerCommand("devmate.analyze", () =>
+    //   // analyzeCode(context)
+    // ),
     vscode.commands.registerCommand("devmate.refactor", () =>
       refactorCode(context)
     ),
